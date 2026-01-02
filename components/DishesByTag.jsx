@@ -1,7 +1,30 @@
+import { useState } from 'react';
+
+import { customerToTags, tagsForCustomer } from '../data.js';
+
+const customers = Object.keys(customerToTags);
+
 export default function DishesByTag() {
+  const [cTags, setCTags] = useState([]);
+
   return (
-    <div>
-      Dishes By Tag
+    <div className="flex flex-col">
+      <h1>Dishes By Tag</h1>
+      <select
+        className=""
+        options={customers.map(c => ({ value: c, label: c }))}
+        defaultValue={customers[0]}
+        onChange={customer => setCTags(tagsForCustomer(customer).reverse())}
+      />
+      <div className="flex flex-col">
+        {(cTags || []).map(g =>
+          g.map(([dish, tags]) =>
+            <div>
+              • {dish} has ${tags.length} compatible tags: ${tags.join(', ')}
+            </div>
+          )
+        )}
+      </div>
     </div>
   );
 }
