@@ -9,11 +9,11 @@ export default function DishesByTag() {
 
   return (
     <div className="flex flex-col">
-      <h1>Dishes By Tag</h1>
+      <h1>Dishes Ranked By Tag For Customer</h1>
       <select
         className=""
         defaultValue={customers[0]}
-        onChange={customer => setCTags(tagsForCustomer(customer).reverse())}
+        onChange={e => setCTags(tagsForCustomer(e.target.value).reverse())}
       >
         {customers.map(c => <option value={c}>{c}</option>)}
       </select>
