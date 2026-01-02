@@ -21,7 +21,7 @@ export default function DishesByTag() {
         {(cTags || []).map(g =>
           g.map(([dish, tags]) =>
             <div>
-              • {dish} has {tags.length} compatible tags: ${tags.join(', ')}
+              • {dish} has {tags.length} compatible tags: {tags.join(', ')}
             </div>
           )
         )}
