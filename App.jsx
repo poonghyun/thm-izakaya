@@ -1,3 +1,7 @@
+export default function App() {
+  return <div>Hello World</div>;
+}
+
 const dishToTags = {
   'seafood miso soup': ['economical', 'homecooking', 'soup', 'vegetarian'],
   'grilled lamprey': ['aquatic', 'grilled', 'signature'],
@@ -199,4 +203,3 @@ function ingredientsForOneTagDishes(customer, dish) {
 //   console.log(`Unexpected script type: ${scriptType}`);
 // }
 
-console.log("index.js loaded!");
