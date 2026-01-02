@@ -12,10 +12,11 @@ export default function DishesByTag() {
       <h1>Dishes By Tag</h1>
       <select
         className=""
-        options={customers.map(c => ({ value: c, label: c }))}
         defaultValue={customers[0]}
         onChange={customer => setCTags(tagsForCustomer(customer).reverse())}
-      />
+      >
+        {customers.map(c => <option value={c}>{c}</option>)}
+      </select>
       <div className="flex flex-col">
         {(cTags || []).map(g =>
           g.map(([dish, tags]) =>
