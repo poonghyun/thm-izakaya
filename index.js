@@ -157,49 +157,46 @@ function ingredientsForOneTagDishes(customer, dish) {
     }, []);
 }
 
-function generateMenu(dishList, customerList) {
-  const dishes = dishList.split(',');
-  const customers = customerList.split(',');
-}
+// const args = process.argv.slice(2);
+// const scriptType = args[0];
 
-const args = process.argv.slice(2);
-const scriptType = args[0];
+// if (scriptType === 'dishesByTag') {
+//   if (args.length !== 2) {
+//     console.log('Wrong number of arguments');
+//   } else {
+//     const customer = args[1];
+//     const result = tagsForCustomer(customer).reverse();
+//     if (result) {
+//       console.log(`Dishes for customer ${customer} sorted by compatible tags:`);
+//       for (const group of result) {
+//         for (const [dish, cTags] of group) {
+//           console.log(`• ${dish} has ${cTags.length} compatible tags: ${cTags.join(', ')}`)
+//         }
+//       }
+//     }
+//   }
+// } else if (scriptType === 'oneTag') {
+//   if (args.length !== 3) {
+//     console.log('Wrong number of arguments');
+//   } else {
+//     const customer = args[1];
+//     const dish = args[2];
+//     const result = ingredientsForOneTagDishes(customer, dish);
+//     if (result) {
+//       console.log(`These ingredients can be added to ${dish}:`);
+//       for (const l of result) {
+//         console.log(`• ${l}`);
+//       }
+//     }
+//   }
+// } else if (scriptType === 'menu') {
+//   if (args.length !== 3) {
+//     console.log('Wrong number of arguments');
+//   } else {
+//     const result = generateMenu(args[1], args[2]);
+//   }
+// } else {
+//   console.log(`Unexpected script type: ${scriptType}`);
+// }
 
-if (scriptType === 'dishesByTag') {
-  if (args.length !== 2) {
-    console.log('Wrong number of arguments');
-  } else {
-    const customer = args[1];
-    const result = tagsForCustomer(customer).reverse();
-    if (result) {
-      console.log(`Dishes for customer ${customer} sorted by compatible tags:`);
-      for (const group of result) {
-        for (const [dish, cTags] of group) {
-          console.log(`• ${dish} has ${cTags.length} compatible tags: ${cTags.join(', ')}`)
-        }
-      }
-    }
-  }
-} else if (scriptType === 'oneTag') {
-  if (args.length !== 3) {
-    console.log('Wrong number of arguments');
-  } else {
-    const customer = args[1];
-    const dish = args[2];
-    const result = ingredientsForOneTagDishes(customer, dish);
-    if (result) {
-      console.log(`These ingredients can be added to ${dish}:`);
-      for (const l of result) {
-        console.log(`• ${l}`);
-      }
-    }
-  }
-} else if (scriptType === 'menu') {
-  if (args.length !== 3) {
-    console.log('Wrong number of arguments');
-  } else {
-    const result = generateMenu(args[1], args[2]);
-  }
-} else {
-  console.log(`Unexpected script type: ${scriptType}`);
-}
+console.log("index.js loaded!");
