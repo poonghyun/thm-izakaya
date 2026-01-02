@@ -12,7 +12,7 @@ export default function DishesByTag() {
       <h1>Dishes Ranked By Tag For Customer</h1>
       <select
         className=""
-        defaultValue={customers[0]}
+        defaultValue="Select a customer"
         onChange={e => setCTags(tagsForCustomer(e.target.value).reverse())}
       >
         {customers.map(c => <option value={c}>{c}</option>)}
@@ -21,7 +21,7 @@ export default function DishesByTag() {
         {(cTags || []).map(g =>
           g.map(([dish, tags]) =>
             <div>
-              • {dish} has ${tags.length} compatible tags: ${tags.join(', ')}
+              • {dish} has {tags.length} compatible tags: ${tags.join(', ')}
             </div>
           )
         )}
@@ -29,19 +29,3 @@ export default function DishesByTag() {
     </div>
   );
 }
-
-// if (scriptType === 'dishesByTag') {
-//   if (args.length !== 2) {
-//     console.log('Wrong number of arguments');
-//   } else {
-//     const customer = args[1];
-//     const result = tagsForCustomer(customer).reverse();
-//     if (result) {
-//       console.log(`Dishes for customer ${customer} sorted by compatible tags:`);
-//       for (const group of result) {
-//         for (const [dish, cTags] of group) {
-//           console.log(`• ${dish} has ${cTags.length} compatible tags: ${cTags.join(', ')}`)
-//         }
-//       }
-//     }
-//   }
